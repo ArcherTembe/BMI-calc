@@ -31,7 +31,12 @@ function calculate(){
   let h = Number(height.value);
   let w = Number(weight.value);
 
-  // ❌ age must be a number
+  
+if(a  = 0 || h <= 0 || w <= 0 ){
+  modal.style.display = "block";
+  modalText.innerHTML = "Age must be a number!"
+}
+
   if (isNaN(a)) {
     modal.style.display = "block";
     modalText.innerHTML = "Age must be a number!";
@@ -91,6 +96,8 @@ function countBmi(){
 
   var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
       
+var result = '';
+
 if (bmi < 18.5) {
     result = 'Underweight';
 }
@@ -106,6 +113,7 @@ else if (bmi >= 30 && bmi < 35) {
 else {
     result = 'Extremely obese';
 }
+
   resultArea.style.display = "block";
   document.querySelector(".comment").innerHTML = `You are <span id="comment">${result}</span>`;
   document.querySelector("#result").innerHTML = bmi.toFixed(2);
