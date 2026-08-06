@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- By Ali Aslan -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +17,7 @@
 
             <div class="input">
                 <label for="height">Age</label>
-                <input type="text" class="text-input" id="age" autocomplete="off" required/>
+                <input type="number" class="text-input" id="age" min="14" max="100" autocomplete="off" required/>
             </div>
 
             <div class="gender">
@@ -39,12 +38,12 @@
             <div class="containerHW">
             <div class="inputH">
               <label for="height">Height(cm)</label>
-              <input type="number" id="height" required>
+              <input type="number" id="height" min="100" max="220" required>
             </div>
 
             <div class="inputW">
               <label for="weight" min="30" max="300">Weight(kg)</label>
-              <input type="number" id="weight" required>
+              <input type="number" id="weight" min="30" max="300" required>
             </div>
           </div>
 
