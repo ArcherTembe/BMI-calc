@@ -14,7 +14,6 @@ var span = document.getElementsByClassName("close")[0];
 
 function calculate(){
  
-  // ❌ empty field check
   if(
     age.value=='' || 
     height.value=='' || 
@@ -26,16 +25,15 @@ function calculate(){
     return;
   }
 
-  // convert values
   let a = Number(age.value);
   let h = Number(height.value);
   let w = Number(weight.value);
 
-  
-if(a  = 0 || h <= 0 || w <= 0 ){
-  modal.style.display = "block";
-  modalText.innerHTML = "Age must be a number!"
-}
+  if (a <= 0 || h <= 0 || w <= 0) {
+    modal.style.display = "block";
+    modalText.innerHTML = "All values must be greater than zero.";
+    return;
+  }
 
   if (isNaN(a)) {
     modal.style.display = "block";
@@ -43,7 +41,6 @@ if(a  = 0 || h <= 0 || w <= 0 ){
     return;
   }
 
-  // ❌ AGE LIMITS (14–100)
   if (a < 14) {
     modal.style.display = "block";
     modalText.innerHTML = "Minimum age is 14";
@@ -56,7 +53,6 @@ if(a  = 0 || h <= 0 || w <= 0 ){
     return;
   }
 
-  // ❌ WEIGHT LIMITS
   if (w < 30) {
     modal.style.display = "block";
     modalText.innerHTML = "Minimum weight is 30kg";
@@ -69,7 +65,6 @@ if(a  = 0 || h <= 0 || w <= 0 ){
     return;
   }
 
-  // ❌ HEIGHT LIMITS
   if (h < 100) {
     modal.style.display = "block";
     modalText.innerHTML = "Minimum height is 100cm";
